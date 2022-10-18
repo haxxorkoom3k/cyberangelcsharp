@@ -1,0 +1,65 @@
+//Задана последовательность n целых чисел. Вычислить сумму чисел, порядковые номера которых совпадают со значением этого числа.
+int n,s,k;
+Console.WriteLine("Введите размер массива: ");
+n = Convert.ToInt32(Console.ReadLine());
+int[] a = new int[n];
+Console.WriteLine("Введите элементы массива: ");
+for (int i = 0; i < n; i++)
+{
+    a[i] = Convert.ToInt32(Console.ReadLine());
+}
+Console.WriteLine("Матрица: ");
+for (int i = 0; i < n; i++)
+{
+    Console.WriteLine(a[i]);
+}
+Console.WriteLine("______________________________");
+s = 0;
+for (int i = 0; i < n; i++)
+{
+    if (a[i] == i)
+    {
+        s = s + a[i
+    }
+    
+}
+Console.WriteLine(s);
+Console.ReadKey();
+
+
+int k = 0, p = 1,s,l,q;
+Console.WriteLine("Строки ");
+int n = int.Parse(Console.ReadLine());
+Console.WriteLine("Столбы");
+int m = int.Parse(Console.ReadLine());
+int[,] arr = new int[n, m];
+Console.WriteLine("Ввод");
+for (int i = 0; i <= n - 1; i++)
+    for (int j = 0; j <= m - 1; j++)
+        arr[i, j] = Convert.ToInt32(Console.ReadLine());
+for (int i = 0; i < n; i++) // вывели двумерный массив
+{
+    Console.WriteLine(); // для математической матрицы
+    for (int j = 0; j < m; j++)
+        Console.Write(arr[i, j] + "  "); // для математической матрицы
+}
+for (int j = 0; j <= m - 1; j++)
+{
+    s = k = 0;
+    for (int i = 0; i <= n - 1; i++)
+        if (arr[i, j] % 2 != 0)
+        {
+            s = s + arr[i, j]; k++;
+        }
+    q = s / k;
+    Console.WriteLine();
+    Console.WriteLine("Среднее арифметическое всех нечётных элементов в каждом столбце " + q);
+    Console.ReadKey();
+}
+           
+// Дан двумерный массив, сформировать одномерный из минимальных элементов каждого столбца матрицы
+int n, m, i, j, min;
+Console.WriteLine("n = ");
+n = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("m = ");
+m = Convert.ToInt32(Console.ReadLine());
