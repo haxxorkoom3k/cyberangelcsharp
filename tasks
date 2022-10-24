@@ -164,3 +164,57 @@ for (int i = 0; i <= n - 1; i++) { Convert.ToInt32(Console.ReadLine()); }
 }
 Console.WriteLine($"k = {k}")
 Console.ReadKey();
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+ 
+namespace ConsoleApp52
+{
+    internal class Program
+    {
+        public static int len(int a)
+        {
+            int k = 0;
+            while(a != 0)
+            {
+                k++;
+                a = a / 10;
+            }
+            return k;
+        }
+        static void Main(string[] args)
+        {
+            int n, m, i, j, k;
+            Console.WriteLine("n = ");
+            n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("m = ");
+            m = Convert.ToInt32(Console.ReadLine());
+            int [,] a = new int[n, m];
+            int[] b = new int[n*m];
+            Console.WriteLine("Элементы");
+            for (i = 0; i < n; i++)
+                for (j = 0; j < m; j++)
+                    a[i, j] = Convert.ToInt32(Console.ReadLine());
+            k = 0;
+            for (i = 0; i <= n - 1; i++)
+                for (j = 0; j <= m - 1; j++)
+                    if (len(a[i, j]) == 2)
+                    {
+                        b[k] = a[i, j]; k++;
+                    }
+            Console.WriteLine();
+            if (k == 0) { Console.WriteLine("da idi ti nahui"); }
+            else
+                for (i = 0; i < k; i++)
+                        Console.WriteLine(b[i]);
+ 
+            Console.ReadKey();
+ 
+                    
+ 
+        }
+    }
+}
