@@ -218,3 +218,66 @@ namespace ConsoleApp52
         }
     }
 }
+
+
+//какая-то хуйня с массивами
+namespace HelloWorld
+{
+    class Program
+    {
+        static int func(int x)
+        {
+            int k = 0;
+            for (int i = 0; i < x; i++)
+            {
+                if(x % 2 == 0)
+                {
+                    k++;
+                    return x;
+                }
+            }
+            return k;
+        }
+        static void Main(string[] args)
+        {
+            int n, m, k = 0;
+            Console.WriteLine("n:");
+            n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("n:");
+            m = Convert.ToInt32(Console.ReadLine());
+            int[,] arr = new int[n, m];
+            int[] arr1 = new int[n * m];
+            Console.WriteLine("Элементы");
+            for (int i = 0; i < n; i++)
+                for (int j = 0; j < m; j++)
+                    arr[i, j] = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Матрица: ");
+            Console.WriteLine();
+            Console.WriteLine("__________________________");
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine();
+                for (int j = 0; j < m; j++)
+                    Console.Write(arr[i, j] + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("__________________________");
+            Console.WriteLine();
+            for(int i =0; i<n; i++)
+            {
+                for (int j = 0; j < m; j++)
+                {
+                    if (func(arr[i,j]) != 0)
+                    {
+                        Console.WriteLine(arr[i, j]);
+                    }
+                }
+            }
+            if (k == 0)
+            {
+                Console.WriteLine("цыгане спиздили числа");
+            }    
+        }
+    }
+}
+ 
